@@ -12,7 +12,7 @@ This repository is a clone of
 discussion, prototype specification, and implementation of a proposal to add
 support for reading and writing multiple bytes at a time from `(array i8)`.
 
-See the [explainer](proposals/multibyte-array-access/Explainer.md) for a
+See the [overview](proposals/multibyte-array-access/Overview.md) for a
 high-level summary of the proposal.
 
 # spec
