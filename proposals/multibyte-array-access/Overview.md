@@ -26,7 +26,7 @@ Valid array types for the instructions:
 
 ### Encoding
 
-Use a reserved bit (7) in the `memarg` field to signal that the load/store instructions will be
+Use a reserved bit (4) in the `memarg` field to signal that the load/store instructions will be
 operating on an array. As mentioned above there will be a type index immediate and array reference
 argument.
 
