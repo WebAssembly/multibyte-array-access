@@ -33,9 +33,9 @@ argument.
 ### Text Format Syntax
 
 ```
-i32.load array $type_index (<array ref>) (<address>)
+i32.load ($type_index) (<array ref>) (<address>)
 
-i32.store array $type_index (<array ref>) (<address>) (<value>)
+i32.store ($type_index) (<array ref>) (<address>) (<value>)
 ```
 
 ## Alternatives
