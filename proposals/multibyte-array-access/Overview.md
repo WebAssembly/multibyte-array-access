@@ -115,12 +115,12 @@ The proposal supports the following memory load and store instructions:
 
 The array versions of the instructions reuse the existing opcodes for the standard memory instructions.
 
-An instruction is determined to be an array access instruction if **bit 4** (value `0x10`) of the `flags` field in its `memarg` immediate is set.
+An instruction is determined to be an array access instruction if **bit 5** of the `flags` field in its `memarg` immediate is set.
 
-When bit 4 of `flags` is set:
+When bit 5 of `flags` is set:
 - The instruction operates on a GC array instead of linear memory.
 - The `memarg` is parsed normally for `flags` and `offset` (both `u32` in LEB128) as well as the `typeidx` (encoded as `u32` in LEB128). Bits 0-3 of `flags` represent the alignment exponent (expressed as `log_2(align)`).
-- No memory index (`memidx`) is allowed. In a valid module, bit 6 of `flags` must be 0 when bit 4 is set.
+- No memory index (`memidx`) is allowed. In a valid module, bit 6 of `flags` must be 0 when bit 5 is set.
 - Immediately following the `memarg` fields (`flags` and `offset`), a `typeidx` (representing the type index of the array type `$t`) is encoded as a `u32` (LEB128).
 
 Thus, the binary format of a multibyte array instruction is:
