@@ -10,7 +10,7 @@
 This repository is a clone of
 [`WebAssembly/spec`](https://github.com/WebAssembly/spec/). It is meant for
 discussion, prototype specification, and implementation of a proposal to add
-support for reading and writing multiple bytes at a time from `(array i8)`.
+support for reading and writing multiple bytes at a time from WebAssembly GC numeric arrays.
 
 See the [overview](proposals/multibyte-array-access/Overview.md) for a
 high-level summary of the proposal.
