@@ -128,7 +128,7 @@ Thus, the binary format of a multibyte array instruction is:
 - `instr ::= op memarg laneidx` (for SIMD lane load/store)
 
 Where `memarg` is defined as:
-- `memarg ::= flags:u32 offset:u32 typeidx:u32` (where `flags & 0x50 = 0x10`)
+- `memarg ::= flags:u32 offset:u32 typeidx:u32` (where `flags & 0x60 = 0x20`)
 
 ### Text Format Syntax
 
