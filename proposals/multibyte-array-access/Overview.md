@@ -121,14 +121,14 @@ When bit 5 of `flags` is set:
 - The instruction operates on a GC array instead of linear memory.
 - The `memarg` is parsed normally for `flags` and `offset` (both `u32` in LEB128) as well as the `typeidx` (encoded as `u32` in LEB128). Bits 0-3 of `flags` represent the alignment exponent (expressed as `log_2(align)`).
 - No memory index (`memidx`) is allowed. In a valid module, bit 6 of `flags` must be 0 when bit 5 is set.
-- Immediately following the `memarg` fields (`flags` and `offset`), a `typeidx` (representing the type index of the array type `$t`) is encoded as a `u32` (LEB128).
+- Immediately following the `flags` field (and before `offset`), a `typeidx` (representing the type index of the array type `$t`) is encoded as a `u32` (LEB128).
 
 Thus, the binary format of a multibyte array instruction is:
 - `instr ::= op memarg` (for regular and SIMD load/store)
 - `instr ::= op memarg laneidx` (for SIMD lane load/store)
 
 Where `memarg` is defined as:
-- `memarg ::= flags:u32 offset:u32 typeidx:u32` (where `flags & 0x60 = 0x20`)
+- `memarg ::= flags:u32 typeidx:u32 offset:u32` (where `flags & 0x60 = 0x20`)
 
 ### Text Format Syntax
 
